@@ -1,0 +1,17 @@
+{
+  "name": "blockcraft-lib-builder",
+  "version": "1.0.0",
+  "description": "BlockCraft library build tools",
+  "main": "blockcraft.js",
+  "bin": {
+    "blockcraft": "blockcraft.js"
+  },
+  "keywords": [
+    "builder"
+  ],
+  "author": "hempflower",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "uglify-js": "^3.6.0"
+  }
+}
