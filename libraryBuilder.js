@@ -71,7 +71,7 @@ module.exports = {
         }else{
             console.log("Skip Copy resources, because ./src/resources doesn't exists.")
         }
-        fs.copyFileSync(process.cwd()+'info.json',process.cwd()+'/build/output/info.json')
+        fs.copyFileSync(process.cwd()+'/info.json',process.cwd()+'/build/output/info.json')
     },
     create(name){
         let re = /^[\u4E00-\u9FA5A-Za-z0-9_\-]+$/

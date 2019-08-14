@@ -5,6 +5,7 @@ const libraryBuilder = require('./libraryBuilder')
 console.log("Welcome use BlockCraft developer tools!");
 if(args.length===2){
     printHelpText();
+    return
 }
 if("build"===args[2]){
     libraryBuilder.build();
