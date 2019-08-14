@@ -1,6 +1,6 @@
 {
   "name": "blockcraft-lib-builder",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "BlockCraft library build tools",
   "main": "blockcraft.js",
   "bin": {

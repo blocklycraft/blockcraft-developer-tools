@@ -29,9 +29,13 @@ function deleteFolderRecursive(path) {
 module.exports = {
     build() {
         console.log("Building library, Please wait....")
-        deleteFolderRecursive(process.cwd()+'/build')
-        fs.mkdirSync(process.cwd()+'/build')
-        fs.mkdirSync(process.cwd()+'/build/output')
+        //deleteFolderRecursive(process.cwd()+'/build')
+        if(!fs.existsSync(process.cwd()+'/build')){
+            fs.mkdirSync(process.cwd()+'/build')
+        }
+        if(!fs.existsSync(process.cwd()+'/build/output')){
+            fs.mkdirSync(process.cwd()+'/build/output')
+        }
         console.log("Step 1: Make bundle")
         if(fs.existsSync(process.cwd()+'/src/bundle')){
             let js_files = getFileList(process.cwd()+'/src/bundle')
@@ -66,7 +70,8 @@ module.exports = {
             }
         }else{
             console.log("Skip Copy resources, because ./src/resources doesn't exists.")
-        }   
+        }
+        fs.copyFileSync(process.cwd()+'info.json',process.cwd()+'/build/output/info.json')
     },
     create(name){
         let re = /^[\u4E00-\u9FA5A-Za-z0-9_\-]+$/
